@@ -1,0 +1,2 @@
+# EduMeet
+Minor + Major project
