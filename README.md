@@ -1,6 +1,6 @@
 # 🎓 EduMeet
 
-Welcome to **EduMeet**! 🎉 
+Welcome to **EduMeet**! 🎉
 
 EduMeet streamlines access to free coding courses from YouTube and other platforms, offering structured roadmaps and tailored assignments. Users can explore diverse topics based on their interests and skill levels, with easy redirection to original content. It simplifies the journey of discovering and accessing coding resources, empowering learners for efficient skill advancement 🚀
 
@@ -43,11 +43,13 @@ EduMeet is built with the following technologies:
 
 Follow these steps to set up the project locally:
 
-1. **Clone the Repository**: 
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-username/edumeet.git
    cd edumeet
+   ```
 2. **Install Dependencies:**:
+
    ```bash
    # Backend dependencies
    cd server
@@ -56,12 +58,18 @@ Follow these steps to set up the project locally:
    # Frontend dependencies
    cd ../client
    npm install
+   ```
+
 3. **Setup Environment Variables**:
- - Create a `.env` file in the server directory and add your MongoDB URI and other necessary configurations:
-   ```bash
-   MONGO_URI=your_mongodb_uri
-   PORT=your_port_number
+
+- Create a `.env` file in the server directory and add your MongoDB URI and other necessary configurations:
+  ```bash
+  MONGO_URI=your_mongodb_uri
+  PORT=your_port_number
+  ```
+
 4. **Start the Development Server**:
+
    ```bash
    # Start backend server
    cd server
@@ -70,15 +78,17 @@ Follow these steps to set up the project locally:
    # Start frontend server
    cd ../client
    npm start
+   ```
 
 ## 🎮 Usage
 
-1. ***Explore Courses***: Browse through various coding topics and find courses that suit your interests.
-2. ***Follow Roadmaps***: Use our structured learning paths to guide your journey.
-3. ***Complete Assignments***: Work on tailored tasks to reinforce your understanding.
-4. ***Access Content***: Redirect easily to original content on platforms like YouTube for detailed tutorials.
+1. **_Explore Courses_**: Browse through various coding topics and find courses that suit your interests.
+2. **_Follow Roadmaps_**: Use our structured learning paths to guide your journey.
+3. **_Complete Assignments_**: Work on tailored tasks to reinforce your understanding.
+4. **_Access Content_**: Redirect easily to original content on platforms like YouTube for detailed tutorials.
 
 ## 🗺️ Roadmap
+
 🔹 Our future plans for EduMeet include:
 
 - 🌟 Adding more diverse topics and courses.
@@ -86,8 +96,9 @@ Follow these steps to set up the project locally:
 - 🧑‍💻 Community features for user interaction and support.
 - 🏅 Gamification elements to make learning more engaging.
 - 🔍 Enhanced search functionality for easier resource discovery.
-  
+
 ## 🤝 Contributing
+
 🔹 We welcome contributions to EduMeet! Here’s how you can help:
 
 1. Fork the repository.
@@ -97,4 +108,5 @@ Follow these steps to set up the project locally:
 5. Open a pull request.
 
 ## 📝 License
+
 🔹 EduMeet is licensed under the MIT License. See the LICENSE file for more details.
