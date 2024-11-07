@@ -1,11 +1,14 @@
 import "./App.css";
+import Hero from "./components/Layout/Hero.jsx";
+import NavBar from "./components/Layout/NavBar.jsx";
 
 const App = () => {
   return (
     <>
-      <div className="bg-black text-yellow font-inter text-center">
-        Edumeet - Learning Hub{" "}
-      </div>
+      <main className="overflow-hidden">
+        <NavBar />
+        <Hero />
+      </main>
     </>
   );
 };

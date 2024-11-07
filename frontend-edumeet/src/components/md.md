@@ -11,7 +11,7 @@ src/
 │ │ └── CourseDetail.jsx
 │ │
 │ ├── Layout/
-│ │ ├── Header.jsx
+│ │ ├── NavBar.jsx
 │ │ ├── Footer.jsx
 │ │ └── Sidebar.jsx
 │ │
