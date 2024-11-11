@@ -1,16 +1,17 @@
-// take all your requires or input at top!
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-exports.connect = () => {
+exports.connectDB = () => {
   mongoose
     .connect(process.env.MONGODB_URL, {
-      useNewUrlParser: true,
       useUnifiedTopology: true,
+      useNewUrlParser: true,
     })
-    .then(() => console.log("DB successfully connected!"))
+    .then(() => {
+      console.log("DB connection successfull!");
+    })
     .catch((error) => {
-      console.log("DB Connection Failed!");
+      console.log("DB Connection Failed");
       console.error(error);
       process.exit(1);
     });

@@ -19,33 +19,48 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    trim: true,
   },
   accountType: {
     type: String,
-    enum: ["Admin", "student", "Instructor"],
+    enum: ["Student", "Instructor", "Admin"],
     required: true,
   },
   additionalDetails: {
-    type: mongoose.schema.Types.ObjectId,
-    required: true,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Profile",
+    required: true, //watch for this required or not
   },
   courses: [
     {
-      type: mongoose.schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Course",
     },
   ],
+  token: {
+    type: String,
+  },
+  resetPasswordExpires: {
+    type: Date,
+  },
   image: {
     type: String,
     required: true,
   },
   courseProgress: [
     {
-      type: mongoose.schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "CourseProgress",
     },
   ],
+  active: {
+    type: Boolean,
+    default: true,
+  },
+  approved: {
+    type: Boolean,
+    default: true,
+  },
 });
 
-module.exports = mongoose.model("User", "UserSchema");
+module.exports = mongoose.model("User", userSchema);
