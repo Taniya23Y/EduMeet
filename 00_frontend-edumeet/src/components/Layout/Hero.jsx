@@ -1,4 +1,4 @@
-import logoBTN from "../../assets/hero-logobtn.png";
+import logoBTN from "../../assets/images/hero-logobtn.png";
 
 const Hero = () => {
   return (
