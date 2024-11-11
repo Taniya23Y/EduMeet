@@ -1,19 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/edumeet-yellow-logo-removebg-preview.png";
 import { navItems } from "../../constants/navIndex";
 import { Menu, X } from "lucide-react";
 import ButtonOne from "../UI/ButtonOne";
 import ButtonTwo from "../UI/ButtonTwo";
+import clsx from "clsx";
 
 const NavBar = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 32);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 py-1 backdrop-blur-lg border-b border-neutral-700/80">
+    <nav
+      className={clsx(
+        "fixed top-0 z-50 w-full py-1 backdrop-blur-lg border-b border-neutral-700/80",
+        hasScrolled && "py-2 bg-black backdrop-blur-[8px]"
+      )}
+    >
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
