@@ -63,6 +63,7 @@ exports.showAllCategories = async (req, res) => {
   }
 };
 
+// categoryPageDetails handler function
 exports.categoryPageDetails = async (req, res) => {
   try {
     const { categoryId } = req.body;
