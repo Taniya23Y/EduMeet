@@ -1,6 +1,7 @@
-// Home.js
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import Hero from "../components/Layout/Hero";
+import SubHero from "../components/Layout/SubHero";
 import Video from "../components/UI/Video";
 import { useRef } from "react";
 import CodeBox from "../components/Layout/CodeBox";
@@ -17,20 +18,20 @@ const Home = () => {
 
   return (
     <div className="container relative mx-auto flex flex-col w-11/12 items-center justify-between">
-      {/* section - 1  */}
+      {/* hero | section - 1  */}
       <Link to={"/signup"} />
       <div>
         <Hero onDemoClick={scrollToVideo} /> {/* Pass the function as a prop */}
       </div>
 
-      {/* video section - 2  */}
+      {/* video | section - 2  */}
       <div ref={videoRef}>
         {" "}
         {/* Set ref on the Video section */}
         <Video />
       </div>
 
-      {/* code - section - 3 */}
+      {/* code | section - 3 */}
       <div>
         <CodeBox
           position={"lg:flex-row"}
@@ -54,13 +55,24 @@ const Home = () => {
             linkto: "/login",
             active: false,
           }}
-          codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a></nav>\n</body>`}
+          codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a></nav>\n</body>\n</html>`}
           codeColor={"text-yellow-25"}
           backgroundGradient={"grad"}
         />
       </div>
 
-      {/* code - section - 4 */}
+      {/* subHero | section - 4  */}
+      <div>
+        <SubHero
+          ctabtn1={{
+            btnText: "Start Now",
+            linkto: "/login",
+            active: true,
+          }}
+        />
+      </div>
+
+      {/* code | section - 5 */}
       <div>
         <CodeBox
           position={"lg:flex-row-reverse"}
@@ -88,6 +100,8 @@ const Home = () => {
           backgroundGradient={"grad"}
         />
       </div>
+
+      {/* courseSlider | section - 6  */}
     </div>
   );
 };
