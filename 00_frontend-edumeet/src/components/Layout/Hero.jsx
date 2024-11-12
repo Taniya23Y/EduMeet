@@ -66,7 +66,7 @@ const Hero = ({ onDemoClick }) => {
         </p>
 
         {/* Underline */}
-        <div className="w-11/12 sm:w-[30rem] md:w-[35rem] lg:w-[37rem] h-1 bg-purple-300 rounded-full mt-1 mx-auto"></div>
+        <div className="w-11/12 sm:w-[30rem] md:w-[35rem] lg:w-[37rem] h-1 bg-pink-300 rounded-full mt-1 mx-auto"></div>
       </div>
     </div>
   );
