@@ -1,30 +1,33 @@
-import logoBTN from "../../assets/images/hero-logobtn.png";
+/* eslint-disable react/prop-types */
 
-const Hero = () => {
+import logoBTN from "../../assets/images/hero-logobtn.png";
+import arrowPurple from "../../assets/images/arrowPurple.png";
+
+const Hero = ({ onDemoClick }) => {
   return (
-    <div className="text-center  pt-[12rem] space-y-6 bg-black text-white py-20 px-4 md:px-10 lg:px-20">
+    <div className="text-center pt-[11rem] space-y-6 bg-black text-white py-20 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
       {/* Tagline */}
-      <p className="text-white text-base text-opacity-75 md:text-base lg:text-base">
+      <p className="text-white text-opacity-75 text-base sm:text-lg md:text-xl">
         Streamline Your Coding Journey
       </p>
 
       {/* Main Heading */}
-      <h1 className="text-yellow text-4xl md:text-5xl lg:text-7xl font-bold uppercase">
+      <h1 className="text-yellow text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-tight">
         Learn the Skill You
       </h1>
-      <h1 className="text-yellow text-4xl md:text-5xl lg:text-7xl font-bold uppercase">
+      <h1 className="text-yellow text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-tight">
         Need to Succeed
       </h1>
 
       {/* "With" and Buttons */}
-      <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mt-4">
-        <div className="flex gap-3">
-          <h1 className="text-yellow text-4xl md:text-5xl lg:text-7xl font-bold uppercase">
+      <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-4 relative">
+        <div className="flex items-center gap-3">
+          <h1 className="text-yellow text-[2.2rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase">
             With
           </h1>
 
           {/* Logo Button */}
-          <button className="w-24 h-12 md:w-32 md:h-14 lg:w-30 lg:h-18 rounded-full overflow-hidden bg-white">
+          <button className="w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16 rounded-full overflow-hidden bg-white">
             <img
               src={logoBTN}
               alt="EduMeet Logo"
@@ -32,16 +35,27 @@ const Hero = () => {
             />
           </button>
 
-          {/* Demo Button */}
-          <button className="w-24 h-12 md:w-32 md:h-14 lg:w-30 lg:h-18 bg-purple-500 text-black font-bold rounded-full flex items-center justify-center text-2xl">
+          {/* Demo Button with scroll action */}
+          <button
+            aria-label="demo"
+            onClick={onDemoClick}
+            className="w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16 bg-purple-500 text-black font-bold rounded-full flex items-center justify-center text-lg sm:text-xl md:text-2xl"
+          >
             DEMO
           </button>
         </div>
       </div>
 
+      {/* Arrow Positioned Between Buttons and Video */}
+      <img
+        src={arrowPurple}
+        alt="Arrow pointing to video"
+        className="absolute top-[21.625rem] left-[19rem] w-[8rem] h-[8.7rem] md:top-[24.625rem] md:left-[48rem] md:w-[20rem] md:h-[18.7rem]  object-contain hidden md:block 2xl:hidden"
+      />
+
       {/* Subtitle with Underline */}
-      <div className="relative mt-10">
-        <p className="text-lg md:text-xl text-gray-300">
+      <div className="relative mt-8 pt-4">
+        <p className="text-[0.7rem] sm:text-base md:text-lg lg:text-xl text-gray-300">
           <span role="img" aria-label="star">
             🌟
           </span>{" "}
@@ -50,25 +64,10 @@ const Hero = () => {
             🌟
           </span>
         </p>
-        {/* Underline */}
-        <div
-          className="w-[37rem] h-1 bg-purple-300 rounded-full mt-1 mx-auto"
-          // style={{ maxWidth: "60%" }}
-        ></div>
-      </div>
 
-      {/* Decorative Dashed Line */}
-      {/* <div className="mt-8 flex justify-center">
-        <svg width="200" height="50" className="text-purple-300">
-          <path
-            d="M0 20 Q50 50, 100 20 T200 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeDasharray="5,5"
-          />
-        </svg>
-      </div> */}
+        {/* Underline */}
+        <div className="w-11/12 sm:w-[30rem] md:w-[35rem] lg:w-[37rem] h-1 bg-purple-300 rounded-full mt-1 mx-auto"></div>
+      </div>
     </div>
   );
 };

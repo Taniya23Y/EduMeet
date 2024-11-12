@@ -7,11 +7,13 @@
 @layer base {
   html {
     @apply bg-[#1D1D1D];
+    overflow-x: hidden;
   }
 
   body {
     font-family: "Poppins", sans-serif;
     @apply text-[16px] tracking-[-0.03em] text-p5;
+    overflow-x: hidden;
   }
 }
 
@@ -19,4 +21,55 @@
   .container {
     @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
   }
+}
+
+.code-border {
+  background: linear-gradient(
+    111.93deg,
+    rgba(14, 26, 45, 0.24) -1.4%,
+    rgba(17, 30, 50, 0.38) 104.96%
+  );
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right bottom, #ffffff38, #ffffff00);
+}
+
+.homepage_bg {
+  background: url("../../../assets/Images/bghome.svg");
+}
+
+.grad {
+  position: absolute;
+  width: 372.95px;
+  height: 257.05px;
+  left: calc(50% - 372.95px / 2 - 76.53px);
+  top: calc(50% - 257.05px / 2 - 47.47px);
+
+  /* Gradient/02 */
+
+  background: linear-gradient(
+    123.77deg,
+    #8a2be2 -6.46%,
+    #ffa500 59.04%,
+    #f8f8ff 124.53%
+  );
+  opacity: 0.2;
+  filter: blur(34px);
+  transform: matrix(1, 0, -0.03, 1, 0, 0);
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
