@@ -3,6 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      zIndex: {
+        4: "4",
+      },
+      borderRadius: {
+        half: "50%",
+      },
       colors: {
         yellow: "#FFB400",
         p2: "#3C52D9",

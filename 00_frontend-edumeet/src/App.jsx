@@ -4,6 +4,7 @@ import "./App.css";
 import Login1 from "./components/Auth/Login1.jsx";
 import NavBar from "./components/Layout/NavBar.jsx";
 import Footer from "./components/Layout/Footer.jsx";
+import Error from "./pages/Error.jsx";
 // import Login from "./components/Auth/Login.jsx";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login1" element={<Login1 />} />{" "}
         {/* Route for Login1 component */}
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </div>
