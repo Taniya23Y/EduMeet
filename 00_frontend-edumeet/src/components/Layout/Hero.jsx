@@ -50,7 +50,7 @@ const Hero = ({ onDemoClick }) => {
       <img
         src={arrowPurple}
         alt="Arrow pointing to video"
-        className="absolute top-[21.625rem] left-[19rem] w-[8rem] h-[8.7rem] md:top-[24.625rem] md:left-[48rem] md:w-[20rem] md:h-[18.7rem]  object-contain hidden md:block 2xl:hidden"
+        className="absolute top-[21.625rem] left-[19rem] w-[8rem] h-[8.7rem] md:top-[24.625rem] md:left-[49rem] md:w-[20rem] md:h-[18.7rem]  object-contain hidden md:block 2xl:hidden"
       />
 
       {/* Subtitle with Underline */}

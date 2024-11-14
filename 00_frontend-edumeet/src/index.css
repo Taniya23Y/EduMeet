@@ -82,12 +82,22 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.glass-bg {
+/* .glass-bg {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10px);
   border-radius: 10px;
+} */
+
+.glass-bg {
+  background: rgba(255, 255, 255, 0.15); /* Soft white with transparency */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Light gray border */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Subtle shadow using a neutral color */
+  backdrop-filter: blur(
+    12px
+  ); /* Slightly more blur for a stronger glass effect */
+  border-radius: 12px; /* Softer corners */
 }
 
 /* Dotted Line for Timeline Connection */
@@ -101,7 +111,7 @@
 
 /***************** FAQ ********************/
 .g5 {
-  background: linear-gradient(#337969, #55b2c9);
+  background: linear-gradient(#b4bf73, #a08d70);
 }
 
 .g4 {
