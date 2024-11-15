@@ -10,7 +10,7 @@ const Faq = () => {
   return (
     <section>
       <Element name="faq" className="relative pb-6">
-        <div className="container relative z-2 py-20 flex flex-col items-center text-center">
+        <div className="container relative z-2 py-10 pb-20 flex flex-col items-center text-center">
           <div>
             <h3 className="text-3xl max-md:h5 max-w-640 max-lg:max-w-md mb-4 text-white font-bold">
               Curiosity didn&apos;t kill the cat, it gave it answers.

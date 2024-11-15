@@ -9,6 +9,8 @@ import avatar7 from "../../assets/images/CTA_img1@2x.png";
 import avatar8 from "../../assets/images/CTA_img2@2x.png";
 import avatar9 from "../../assets/images/CTA_img3@2x.png";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
+import React from "react";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const testimonial = [
@@ -72,97 +74,93 @@ const firstColumn = testimonial.slice(0, 3);
 const secondColumn = testimonial.slice(3, 6);
 const thirdColumn = testimonial.slice(6, 9);
 
+const NewTestimonialColumn = ({ testimonial, className }) => (
+  <div className={`mx-auto ${className}`}>
+    <motion.div
+      animate={{ translateY: "-50%" }}
+      transition={{
+        duration: PropTypes.duration || 10,
+        repeat: Infinity,
+        ease: "linear",
+        repeatType: "loop",
+        repeatDelay: 0,
+      }}
+      className={`flex flex-col mx-auto gap-6 `}
+    >
+      {[...new Array(2)].fill(0).map((_, index) => (
+        <React.Fragment key={index}>
+          {testimonial.map(({ text, imageSrc, name, username }, index) => (
+            <div className="card" key={index}>
+              <div className="text-black text-[0.99rem]">{text}</div>
+              <div className="flex items-center gap-2 mt-5">
+                <img
+                  src={imageSrc}
+                  alt="avatar"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-full"
+                />
+                <div className="flex flex-col ">
+                  <div className="font-medium -tracking-tight leading-5 text-yellow">
+                    {name}
+                  </div>
+                  <div className="leading-5 tracking-tight text-[#963136]">
+                    {username}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </React.Fragment>
+      ))}
+    </motion.div>
+  </div>
+);
+
+// PropTypes for NewTestimonialColumn
+NewTestimonialColumn.propTypes = {
+  testimonial: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      imageSrc: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      username: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  className: PropTypes.string, // Add this to handle the optional className prop
+  duration: PropTypes.number,
+};
+
+NewTestimonialColumn.defaultProps = {
+  className: "", // Default to an empty string
+  duration: "", // Default to an empty string
+};
+
 const ReviewSlider = () => {
   return (
-    <section className="pb-10 ">
+    <section className="mb-6 ">
       <div className="container">
         <div className="flex flex-col items-center justify-center gap-3 mt-4">
           <h2 className="text-2xl font-bold mt-2 text-white">
             What our users say
           </h2>
-          <p className="font-medium text-center text-purple-300 mb-3">
+          <p className="font-medium text-center text-purple-300 pb-9">
             From intuitive design to powerful features, our app has become an
             essential tool for users around the world.
           </p>
         </div>
-        <div className="flex just-center gap-6">
-          {/* firstColumn  */}
-          <div className="flex flex-col  mx-auto gap-6 mt-10 [mask-image:linear-gradient(to bottom,transparent,rgba(255,255,0,0.05),rgba(255,255,0,0.75),transparent)]">
-            {firstColumn.map(({ text, imageSrc, name, username }, index) => (
-              <div className="card" key={index}>
-                <div className="text-black text-[0.99rem]">{text}</div>
-                <div className="flex items-center gap-2 mt-5">
-                  <img
-                    src={imageSrc}
-                    alt="avatar"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 rounded-full"
-                  />
-                  <div className="flex flex-col ">
-                    <div className="font-medium -tracking-tight leading-5 text-yellow">
-                      {name}
-                    </div>
-                    <div className="leading-5 tracking-tight text-[#963136]">
-                      {username}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* secondColumn  */}
-          <div className="hidden md:flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to bottom,transparent,rgba(255,255,0,0.05),rgba(255,255,0,0.75),transparent)]">
-            {secondColumn.map(({ text, imageSrc, name, username }, index) => (
-              <div className="card" key={index}>
-                <div className="text-black text-[0.99rem]">{text}</div>
-                <div className="flex items-center gap-2 mt-5">
-                  <img
-                    src={imageSrc}
-                    alt="avatar"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 rounded-full"
-                  />
-                  <div className="flex flex-col">
-                    <div className="font-medium -tracking-tight leading-5 text-yellow">
-                      {name}
-                    </div>
-                    <div className="leading-5 tracking-tight text-[#963136]">
-                      {username}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* thirdColumn */}
-          <div className="hidden lg:flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to bottom,transparent,rgba(255,255,0,0.05),rgba(255,255,0,0.75),transparent)]">
-            {thirdColumn.map(({ text, imageSrc, name, username }, index) => (
-              <div className="card" key={index}>
-                <div className="text-black text-[0.99rem]">{text}</div>
-                <div className="flex items-center gap-2 mt-5">
-                  <img
-                    src={imageSrc}
-                    alt="avatar"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 rounded-full"
-                  />
-                  <div className="flex flex-col">
-                    <div className="font-medium -tracking-tight leading-5 text-yellow">
-                      {name}
-                    </div>
-                    <div className="leading-5 tracking-tight text-[#963136]">
-                      {username}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="flex items-center justify-center mx-auto gap-6 [mask-image:linear-gradient(to bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+          <NewTestimonialColumn testimonial={firstColumn} duration={15} />
+          <NewTestimonialColumn
+            testimonial={secondColumn}
+            className="hidden md:block"
+            duration={19}
+          />
+          <NewTestimonialColumn
+            testimonial={thirdColumn}
+            className="hidden lg:block"
+            duration={17}
+          />
         </div>
       </div>
     </section>

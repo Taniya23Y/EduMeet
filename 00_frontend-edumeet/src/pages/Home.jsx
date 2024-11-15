@@ -171,7 +171,7 @@ const Home = () => {
 
       {/* Review - section - 11  */}
       <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white">
-        <h2 className="text-center text-4xl font-semibold mt-10">
+        <h2 className="text-center text-4xl font-semibold mt-10 pt-9">
           <HighlightText text={"Review Section"} />
         </h2>
         {/* Review Slider here */}
