@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import Hero from "../components/Layout/Hero";
 import SubHero from "../components/Layout/SubHero";
@@ -13,6 +12,7 @@ import { FaArrowRight } from "react-icons/fa";
 import TimelineSection from "../components/Layout/TimelineSection";
 import LearningLanguageSection from "../Components/Layout/LearningLanguageSection";
 import Faq from "../components/Layout/FAQ";
+import UnlockBanner from "../components/Layout/UnlockBanner";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -111,13 +111,16 @@ const Home = () => {
 
       {/* courseSlider | section - 7  */}
 
-      {/* switchers | section - 8  */}
+      {/* UnlockBanner | section - 8  */}
+      <UnlockBanner />
+
+      {/* switchers | section - 9  */}
       <div className="bg-black text-white">
         {/* buttons and criss-cross background */}
-        <div className="home_bg h-[310px] rounded-xl">
+        <div className="md:home_bg h-[310px] rounded-xl">
           <div className="w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto">
             <div className="hidden lg:block h-[180px]"></div>
-            <div className=" mt-8 lg:mt-0 flex flex-row gap-7 text-white ">
+            <div className=" mt-0 lg:mt-0 flex flex-row gap-7 text-white ">
               <CTAButton active={true} linkto={"/signup"}>
                 <div className="flex items-center gap-3">
                   Explore Full Catalog
@@ -159,17 +162,17 @@ const Home = () => {
         </div>
       </div>
 
-      {/* FQA - section - 9  */}
+      {/* FQA - section - 10  */}
       <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white">
         <h2 className="text-center text-4xl font-semibold mt-0">
           <HighlightText text={"Discover More with Our FAQ Section"} />
         </h2>
       </div>
 
-      {/* FAQ | section - 10 */}
+      {/* FAQ | section - 11 */}
       <Faq />
 
-      {/* Review - section - 11  */}
+      {/* Review - section - 12  */}
       <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white">
         <h2 className="text-center text-4xl font-semibold mt-10 pt-9">
           <HighlightText text={"Review Section"} />

@@ -79,13 +79,12 @@ const NewTestimonialColumn = ({ testimonial, className }) => (
     <motion.div
       animate={{ translateY: "-50%" }}
       transition={{
-        duration: PropTypes.duration || 10,
+        duration: 10,
         repeat: Infinity,
         ease: "linear",
         repeatType: "loop",
-        repeatDelay: 0,
       }}
-      className={`flex flex-col mx-auto gap-6 `}
+      className="flex flex-col mx-auto gap-6"
     >
       {[...new Array(2)].fill(0).map((_, index) => (
         <React.Fragment key={index}>
@@ -100,7 +99,7 @@ const NewTestimonialColumn = ({ testimonial, className }) => (
                   height={40}
                   className="h-10 w-10 rounded-full"
                 />
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                   <div className="font-medium -tracking-tight leading-5 text-yellow">
                     {name}
                   </div>
@@ -127,18 +126,16 @@ NewTestimonialColumn.propTypes = {
       username: PropTypes.string.isRequired,
     })
   ).isRequired,
-  className: PropTypes.string, // Add this to handle the optional className prop
-  duration: PropTypes.number,
+  className: PropTypes.string,
 };
 
 NewTestimonialColumn.defaultProps = {
-  className: "", // Default to an empty string
-  duration: "", // Default to an empty string
+  className: "",
 };
 
 const ReviewSlider = () => {
   return (
-    <section className="mb-6 ">
+    <section className="mb-6">
       <div className="container">
         <div className="flex flex-col items-center justify-center gap-3 mt-4">
           <h2 className="text-2xl font-bold mt-2 text-white">
@@ -149,17 +146,23 @@ const ReviewSlider = () => {
             essential tool for users around the world.
           </p>
         </div>
-        <div className="flex items-center justify-center mx-auto gap-6 [mask-image:linear-gradient(to bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
-          <NewTestimonialColumn testimonial={firstColumn} duration={15} />
+        <div
+          className="flex items-center justify-center mx-auto gap-6 max-h-[738px] overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0) 100%)",
+          }}
+        >
+          <NewTestimonialColumn testimonial={firstColumn} />
           <NewTestimonialColumn
             testimonial={secondColumn}
             className="hidden md:block"
-            duration={19}
           />
           <NewTestimonialColumn
             testimonial={thirdColumn}
             className="hidden lg:block"
-            duration={17}
           />
         </div>
       </div>
