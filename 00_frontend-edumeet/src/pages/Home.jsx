@@ -117,9 +117,9 @@ const Home = () => {
       {/* switchers | section - 9  */}
       <div className="bg-black text-white">
         {/* buttons and criss-cross background */}
-        <div className="md:home_bg h-[310px] rounded-xl">
+        <div className="md:home_bg h-[270px] md:h-[250px] lg:h-[107px] rounded-xl">
           <div className="w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto">
-            <div className="hidden lg:block h-[180px]"></div>
+            <div className="hidden lg:block h-[180px] md:h-14"></div>
             <div className=" mt-0 lg:mt-0 flex flex-row gap-7 text-white ">
               <CTAButton active={true} linkto={"/signup"}>
                 <div className="flex items-center gap-3">
