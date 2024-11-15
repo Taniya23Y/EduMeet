@@ -23,8 +23,8 @@ const Community = ["Forums", "Chapters", "Events"];
 
 const Footer = () => {
   return (
-    <div className="bg-[#313131]">
-      <div className="flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto relative py-14">
+    <div className="bg-[#313131] ">
+      <div className="container flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto relative py-14">
         <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-yellow">
           {/* Section 1 */}
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
@@ -52,7 +52,7 @@ const Footer = () => {
               <div></div>
             </div>
 
-            <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
+            <div className="container w-[48%] lg:w-[30%] mb-7 lg:pl-0">
               <h1 className="text-richblack-50 font-semibold text-[16px]">
                 Resources
               </h1>
@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
+            <div className="container w-[48%] lg:w-[30%] mb-7 lg:pl-0">
               <h1 className="text-richblack-50 font-semibold text-[16px]">
                 Plans
               </h1>
@@ -121,7 +121,7 @@ const Footer = () => {
           </div>
 
           {/* Section 2 */}
-          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
+          <div className="container lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
             {FooterLink2.map((ele, i) => {
               return (
                 <div key={i} className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
@@ -147,7 +147,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-between w-11/12 max-w-maxContent text-richblack-400 mx-auto  pb-14 text-sm">
+      <div className="container flex flex-row items-center justify-between w-11/12 max-w-maxContent text-gray-100 mx-auto  pb-14 text-sm">
         {/* Section 1 */}
         <div className="flex justify-between lg:items-start items-center flex-col lg:flex-row gap-3 w-full">
           <div className="flex flex-row">
@@ -158,7 +158,7 @@ const Footer = () => {
                   className={` ${
                     BottomFooter.length - 1 === i
                       ? ""
-                      : "border-r border-yellow cursor-pointer hover:text-richblack-50 transition-all duration-200"
+                      : "border-r border-yellow cursor-pointer hover:text-yellow transition-all duration-200"
                   } px-3 `}
                 >
                   <Link to={ele.split(" ").join("-").toLocaleLowerCase()}>

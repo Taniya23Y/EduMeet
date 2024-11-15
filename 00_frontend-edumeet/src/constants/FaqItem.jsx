@@ -25,7 +25,7 @@ const FaqItem = ({ item, index }) => {
           <div
             className={clsx(
               "h6 text-[#ffffff] transition-colors duration-500 max-md:flex max-md:min-h-20 max-md:items-center",
-              active && "max-lg:text-p1"
+              active && "max-lg:text-purple-500"
             )}
           >
             {item.question}
@@ -34,7 +34,7 @@ const FaqItem = ({ item, index }) => {
 
         <div
           className={clsx(
-            "faq-icon relative flex size-12 items-center justify-center rounded-full border-2 border-yellow shadow-400 transition-all duration-500 group-hover:border-[#000000]",
+            "faq-icon relative flex size-12 items-center justify-center rounded-full border-2 border-yellow shadow-400 transition-all duration-500 group-hover:border-yellow",
             active && "before:bg-yellow after:rotate-0 after:bg-yellow"
           )}
         >
