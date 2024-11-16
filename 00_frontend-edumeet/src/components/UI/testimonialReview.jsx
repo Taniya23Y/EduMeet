@@ -12,7 +12,6 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import React from "react";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const testimonial = [
   {
     text: "EduMeet has completely changed the way I approach learning. The structured roadmaps are so well-designed that they make even complex topics seem easy to grasp.",
@@ -74,7 +73,8 @@ const firstColumn = testimonial.slice(0, 3);
 const secondColumn = testimonial.slice(3, 6);
 const thirdColumn = testimonial.slice(6, 9);
 
-const NewTestimonialColumn = ({ testimonial, className }) => (
+// Updated NewTestimonialColumn component with default param
+const NewTestimonialColumn = ({ testimonial, className = "" }) => (
   <div className={`mx-auto ${className}`}>
     <motion.div
       animate={{ translateY: "-50%" }}
@@ -89,7 +89,10 @@ const NewTestimonialColumn = ({ testimonial, className }) => (
       {[...new Array(2)].fill(0).map((_, index) => (
         <React.Fragment key={index}>
           {testimonial.map(({ text, imageSrc, name, username }, index) => (
-            <div className="card" key={index}>
+            <div
+              className="card bg-white bg-opacity-70 backdrop-blur-lg p-4 rounded-lg shadow-lg"
+              key={index}
+            >
               <div className="text-black text-[0.99rem]">{text}</div>
               <div className="flex items-center gap-2 mt-5">
                 <img
@@ -116,7 +119,6 @@ const NewTestimonialColumn = ({ testimonial, className }) => (
   </div>
 );
 
-// PropTypes for NewTestimonialColumn
 NewTestimonialColumn.propTypes = {
   testimonial: PropTypes.arrayOf(
     PropTypes.shape({
@@ -129,11 +131,7 @@ NewTestimonialColumn.propTypes = {
   className: PropTypes.string,
 };
 
-NewTestimonialColumn.defaultProps = {
-  className: "",
-};
-
-const ReviewSlider = () => {
+const testimonialReview = () => {
   return (
     <section className="mb-6">
       <div className="container">
@@ -170,4 +168,4 @@ const ReviewSlider = () => {
   );
 };
 
-export default ReviewSlider;
+export default testimonialReview;

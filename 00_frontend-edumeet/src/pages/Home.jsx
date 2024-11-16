@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Hero from "../components/Layout/Hero";
 import SubHero from "../components/Layout/SubHero";
 import Video from "../components/UI/Video";
-import ReviewSlider from "../components/UI/ReviewSlider";
+import TestimonialReview from "../components/UI/testimonialReview";
 import { useRef } from "react";
 import CodeBox from "../components/Layout/CodeBox";
 import HighlightText from "../components/UI/HightlightText";
@@ -178,7 +178,7 @@ const Home = () => {
           <HighlightText text={"Review Section"} />
         </h2>
         {/* Review Slider here */}
-        <ReviewSlider />
+        <TestimonialReview />
       </div>
     </div>
   );
