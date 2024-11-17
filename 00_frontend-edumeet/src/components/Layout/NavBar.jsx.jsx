@@ -84,7 +84,7 @@ const NavBar = () => {
               <li key={index}>
                 {item.label === "Catelog" ? (
                   <div className="flex items-center gap-1">
-                    <p>{item.label}</p>
+                    <p className="cursor-pointer">{item.label}</p>
                     <IoIosArrowDropdownCircle />
                     {/* hover part  */}
                     <div></div>
