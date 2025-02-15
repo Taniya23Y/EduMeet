@@ -31,21 +31,28 @@ exports.contactUsEmail = (
         width: 100%;
         background-color: #1d1d1d;
         padding: 30px;
-        border-radius: 10px;
+        border-radius: 40px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         text-align: center;
-        border: 2px solid #ffb400;
+        /* border: 2px solid #ffb400; */
       }
 
-      .logo {
-        max-width: 180px;
-        margin-bottom: 20px;
+      .logoH {
+        /* padding-top: 12px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .h1Logo {
+        color: #ffb400;
       }
 
       .message {
         font-size: 22px;
         font-weight: bold;
-        color: #ffb400;
+        color: #bfdc98;
         margin-bottom: 15px;
       }
 
@@ -57,6 +64,11 @@ exports.contactUsEmail = (
 
       .body p {
         margin: 10px 0;
+      }
+
+      .highlight1 {
+        font-weight: bold;
+        color: #e84854;
       }
 
       .highlight {
@@ -98,30 +110,45 @@ exports.contactUsEmail = (
 
   <body>
     <div class="container">
-      <a href="https://edumeet-project.vercel.app">
-        <img class="logo" src="logo.png" alt="Edumeet - Learning Hub Logo" />
-      </a>
+      <div class="logoH">
+        <a href="https://edumeet-project.vercel.app">
+          <img
+            class="logo"
+            src="../edumeet-exact.png"
+            alt="Edumeet - Learning Hub Logo"
+            height="50px"
+            width="52px"
+          />
+        </a>
+        <h1 class="h1Logo">EduMeet</h1>
+      </div>
+      <img
+        src="../confirmMail.png"
+        alt="Outlook"
+        height="120px"
+        width="130px"
+      />
       <div class="message">Contact Form Confirmation</div>
       <div class="body">
-        <p>Dear ${firstname} ${lastname},</p>
+        <p>Dear ${firstname} ${lastname}, 👋</p>
         <p>
-          Thank you for contacting us. We have received your message and will
+          Thank you for contacting us. We have received your message 📬 and will
           respond to you as soon as possible.
         </p>
         <p>Here are the details you provided:</p>
-        <p>Name: <span class="highlight">${firstname} ${lastname}</span></p>
+        <p>Name: <span class="highlight1">${firstname} ${lastname}</span></p>
         <p>Email: <span class="highlight">${email}</span></p>
         <p>Phone Number: <span class="highlight">${phoneNo}</span></p>
         <p>Message: <span class="highlight">${message}</span></p>
-        <p>We appreciate your interest and will get back to you shortly.</p>
       </div>
       <div class="support">
         If you have any further questions or need immediate assistance, please
         feel free to reach out to us at
         <a href="mailto:info@edumeet.com">info@edumeet.com</a>. We are here to
-        help!
+        help!😊
       </div>
     </div>
   </body>
-</html>`;
+</html>
+`;
 };

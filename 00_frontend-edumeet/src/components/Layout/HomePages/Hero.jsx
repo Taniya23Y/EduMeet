@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
-import logoBTN from "../../assets/images/hero-logobtn.png";
-import arrowPurple from "../../assets/images/arrowPurple.png";
+import logoBTN from "../../../assets/images/hero-logobtn.png";
+import arrowPurple from "../../../assets/images/arrowPurple.png";
 
 const Hero = ({ onDemoClick }) => {
   return (

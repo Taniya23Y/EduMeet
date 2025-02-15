@@ -8,8 +8,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
-    "server": "cd 01_backend-edumeet && npm run dev",
-    "dev": "concurrently -n \"frontend,backend\" -c \"bgBlack,bgYellow\" \"npm start\" \"npm run server\""
+    "server": "cd ../01_backend-edumeet && npm run dev",
+    "dev": "concurrently -n \"frontend,backend\" -c \"bgMagenta,bgYellow\" \"npm start\" \"npm run server\""
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.1",
@@ -23,6 +23,7 @@
     "framer-motion": "^11.11.11",
     "gsap": "^3.12.5",
     "lucide-react": "^0.454.0",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
@@ -41,6 +42,7 @@
     "react-top-loading-bar": "^2.3.1",
     "react-type-animation": "^3.2.0",
     "redux-toolkit": "^1.1.2",
+    "styled-components": "^6.1.15",
     "swiper": "^11.1.14",
     "video-react": "^0.16.0",
     "web-vitals": "^4.2.4"

@@ -8,43 +8,52 @@ const courseRoutes = require("./routes/Course");
 
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const { cloudinaryConnect } = require("./config/cloudinary");
-const fileUpload = require("express-fileupload");
-const dotenv = require("dotenv");
 
+const cors = require("cors");
+const { cloudinaryconnect } = require("./config/cloudinary");
+const fileUpload = require("express-fileupload");
+
+const dotenv = require("dotenv");
 dotenv.config();
-const PORT = process.env.PORT || 4000;
+
+const PORT = process.env.PORT || 5000;
 
 //database connect
 database.connectDB();
+
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
+
+const whitelist = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",") // Convert comma-separated string to an array
+  : ["*"];
+
 app.use(
   cors({
-    origin: "*",
+    origin: whitelist,
     credentials: true,
+    maxAge: 14400,
   })
 );
-// app.use((req, res, next) => {
-// 	res.header('Access-Control-Allow-Origin', '*');
-// 	next();
-//   });
+
 app.use(
   fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp",
   })
 );
+
 //cloudinary connection
-cloudinaryConnect();
+cloudinaryconnect();
 
 //routes
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/payment", paymentRoutes);
+
+app.use("/api/v1/contact", require("./routes/ContactUs"));
 
 //def route
 
@@ -56,5 +65,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`App is running at ${PORT}`);
+  console.log(`Server is running at ${PORT}`);
 });

@@ -24,21 +24,26 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
         width: 100%;
         background-color: #1d1d1d;
         padding: 30px;
-        border-radius: 10px;
+        border-radius: 40px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         text-align: center;
-        border: 2px solid #ffb400;
       }
 
-      .logo {
-        max-width: 180px;
-        margin-bottom: 20px;
+      .logoH {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .h1Logo {
+        color: #ffb400;
       }
 
       .message {
         font-size: 22px;
         font-weight: bold;
-        color: #ffb400;
+        color: #bfdc98;
         margin-bottom: 15px;
       }
 
@@ -50,6 +55,11 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
 
       .body p {
         margin: 10px 0;
+      }
+
+      .highlight1 {
+        font-weight: bold;
+        color: #e84854;
       }
 
       .highlight {
@@ -91,27 +101,42 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
 
   <body>
     <div class="container">
-      <a href="https://edumeet-project.vercel.app">
-        <img class="logo" src="logo.png" alt="Edumeet - Learning Hub Logo" />
-      </a>
+      <div class="logoH">
+        <a href="https://edumeet-project.vercel.app">
+          <img
+            class="logo"
+            src="../edumeet-exact.png"
+            alt="Edumeet - Learning Hub Logo"
+            height="50px"
+            width="52px"
+          />
+        </a>
+        <h1 class="h1Logo">EduMeet</h1>
+      </div>
+
+      <img
+        src="./paymentSuccessful.png"
+        alt="paymentSuccessful"
+        height="150px"
+        width="170px"
+      />
       <div class="message">Course Payment Confirmation</div>
       <div class="body">
-        <p>Dear ${name},</p>
+        <p>Dear ${name}, 👋</p>
         <p>
           We have received a payment of
-          <span class="highlight">₹${amount}</span>.
+          <span class="highlight1">₹${amount}</span>.
         </p>
-        <p>Your Payment ID is <b>${paymentId}</b></p>
-        <p>Your Order ID is <b>${orderId}</b></p>
+        <p>Your Payment ID is <b class="highlight">${paymentId}</b></p>
+        <p>Your Order ID is <b class="highlight">${orderId}</b></p>
       </div>
       <div class="support">
         If you have any questions or need assistance, please feel free to reach
         out to us at
         <a href="mailto:info@edumeet.com">info@edumeet.com</a>. We are here to
-        help!
+        help!😊
       </div>
     </div>
   </body>
-</html>
-`;
+</html>`;
 };

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import CTAButton from "../UI/Button";
+import CTAButton from "../../UI/Button";
 import { FaArrowRight } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import "../../index.css";
+import "../../../index.css";
 const CodeBox = ({
   position,
   heading,
@@ -40,7 +40,6 @@ const CodeBox = ({
 
       {/*Section 2*/}
       <div className="glass h-fit code-border flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px]">
-        {/*HW -> BG gradient*/}
         <div
           className="absolute gradient-custom
         w-[373px] h-[257px] rounded-full blur-2xl opacity-20 -left-2 -top-2"

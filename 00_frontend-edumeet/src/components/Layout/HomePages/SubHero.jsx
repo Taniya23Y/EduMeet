@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import CTAButton from "../UI/Button";
-import yellowImage from "../../assets/images/yellowImage.png";
-import purpleImage from "../../assets/images/purpleImage.png";
-import redImage from "../../assets/images/redImage.png";
-import greenImage from "../../assets/images/greenImage.png";
-import blueImage from "../../assets/images/blueImage.png";
-import grayGreenImage from "../../assets/images/grayGreenImage.png";
+import CTAButton from "../../UI/Button";
+import yellowImage from "../../../assets/images/yellowImage.png";
+import purpleImage from "../../../assets/images/purpleImage.png";
+import redImage from "../../../assets/images/redImage.png";
+import greenImage from "../../../assets/images/greenImage.png";
+import blueImage from "../../../assets/images/blueImage.png";
+import grayGreenImage from "../../../assets/images/grayGreenImage.png";
 import {
   FaArrowRight,
   FaLongArrowAltRight,
@@ -13,7 +13,7 @@ import {
   FaPencilRuler,
   FaVideo,
 } from "react-icons/fa";
-import HighlightText from "../UI/HightlightText";
+import HighlightText from "../../UI/HightlightText";
 
 const SubHero = ({ ctabtn1 }) => {
   return (

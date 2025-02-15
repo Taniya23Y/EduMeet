@@ -1,6 +1,6 @@
-import VideoBox from "../../assets/images/MainVideo.mp4";
+import VideoBox from "../../../assets/images/MainVideo.mp4";
 import { useState } from "react";
-import Cursor from "./Cursor";
+import Cursor from "../../UI/Cursor";
 
 const Video = () => {
   const [cursorVisible, setCursorVisible] = useState(false);

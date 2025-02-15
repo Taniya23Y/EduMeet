@@ -25,10 +25,9 @@ exports.courseEnrollmentEmail = (courseName, name) => {
         width: 100%;
         background-color: #1d1d1d;
         padding: 30px;
-        border-radius: 10px;
+        border-radius: 40px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         text-align: center;
-        border: 2px solid #ffb400;
       }
 
       .logo {
@@ -39,7 +38,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
       .message {
         font-size: 22px;
         font-weight: bold;
-        color: #ffb400;
+        color: #bfdc98;
         margin-bottom: 15px;
       }
 
@@ -55,16 +54,30 @@ exports.courseEnrollmentEmail = (courseName, name) => {
 
       .highlight {
         font-weight: bold;
-        color: #ffffff;
+        color: #e84854;
+      }
+
+      .logoH {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .h1Logo {
+        padding-bottom: 16px;
+        color: #ffb400;
       }
 
       .cta {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #ffb400;
-        color: #1d1d1d;
+        background-color: #c084fc;
+        color: white;
         text-decoration: none;
-        border-radius: 5px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
         font-size: 16px;
         font-weight: bold;
         margin-top: 20px;
@@ -104,20 +117,36 @@ exports.courseEnrollmentEmail = (courseName, name) => {
 
   <body>
     <div class="container">
-      <a href="https://edumeet-project.vercel.app">
-        <img class="logo" src="logo.png" alt="Edumeet - Learning Hub Logo" />
-      </a>
+      <div class="logoH">
+        <a href="https://edumeet-project.vercel.app">
+          <img
+            class="logo"
+            src="../edumeet-exact.png"
+            alt="Edumeet - Learning Hub Logo"
+            height="50px"
+            width="52px"
+          />
+        </a>
+        <h1 class="h1Logo">EduMeet</h1>
+      </div>
+
+      <img
+        src="./courseEnrollment1.png"
+        alt="courseEnrollment"
+        height="150px"
+        width="190px"
+      />
       <div class="message">Course Registration Confirmation</div>
       <div class="body">
-        <p>Dear ${name},</p>
+        <p>Dear ${name}, 👋</p>
         <p>
           You have successfully registered for the course
           <span class="highlight">"${courseName}"</span>. We are excited to have
-          you as a participant!
+          you as a participant! ✨
         </p>
         <p>
           Please log in to your learning dashboard to access the course
-          materials and start your learning journey.
+          materials and start your learning journey🏇.
         </p>
         <a class="cta" href="https://edumeet-project.vercel.app/dashboard"
           >Go to Dashboard</a
@@ -127,7 +156,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
         If you have any questions or need assistance, please feel free to reach
         out to us at
         <a href="mailto:info@edumeet.com">info@edumeet.com</a>. We are here to
-        help!
+        help!😊
       </div>
     </div>
   </body>

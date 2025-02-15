@@ -1,20 +1,25 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import "./App.css";
-import Login from "./components/Auth/Login.jsx";
-import Signup from "./components/Auth/Signup.jsx";
+import Login from "./components/AuthPages/Login.jsx";
+import Signup from "./components/AuthPages/Signup.jsx";
 import OpenRoute from "./components/Auth/OpenRoute.jsx";
-import NavBar from "./components/Layout/NavBar.jsx";
-import Footer from "./components/Layout/Footer.jsx";
+import NavBar from "./constants/NavBar";
+import Footer from "./constants/Footer.jsx";
 import Error from "./pages/Error.jsx";
 import { RiWifiOffLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
+import ForgotPassword from "./components/AuthPages/ForgotPassword.jsx";
+import ResetPassword from "./components/AuthPages/ResetPassword.jsx";
+import VerifyOtp from "./components/AuthPages/VerifyOtp.jsx";
+import About from "./pages/About.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 
 const App = () => {
+  const location = useLocation();
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [showPopup, setShowPopup] = useState(!navigator.onLine);
 
-  // Monitor internet connectivity
   useEffect(() => {
     const updateOnlineStatus = () => {
       setIsOnline(navigator.onLine);
@@ -30,7 +35,6 @@ const App = () => {
     };
   }, []);
 
-  // Prevent scrolling when popup is shown
   useEffect(() => {
     if (showPopup) {
       document.body.classList.add("overflow-hidden");
@@ -39,9 +43,16 @@ const App = () => {
     }
   }, [showPopup]);
 
+  // Hide Navbar and Footer for signup and login pages
+  const hideNavAndFooter =
+    location.pathname === "/signup" ||
+    location.pathname === "/login" ||
+    location.pathname === "/forgot-password";
+
   return (
     <div className="overflow-hidden w-screen min-h-screen bg-black flex flex-col relative">
-      <NavBar />
+      {/* Conditionally render NavBar */}
+      {!hideNavAndFooter && <NavBar />}
 
       {/* Internet Connection Popup */}
       {showPopup && (
@@ -83,7 +94,6 @@ const App = () => {
             </OpenRoute>
           }
         />
-
         <Route
           path="/signup"
           element={
@@ -92,16 +102,16 @@ const App = () => {
             </OpenRoute>
           }
         />
-
-        {/* <Route path="/forgot-password" element={<ForgotPassword />} /> */}
-
-        {/* <Route path="/update-password/:id" element={<ResetPassword />} /> */}
-
-        {/* <Route path="/verify-email" element={<VerifyOtp />} /> */}
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/update-password/:id" element={<ResetPassword />} />
+        <Route path="/verify-email" element={<VerifyOtp />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<Error />} />
       </Routes>
 
-      <Footer />
+      {/* Conditionally render Footer */}
+      {!hideNavAndFooter && <Footer />}
     </div>
   );
 };

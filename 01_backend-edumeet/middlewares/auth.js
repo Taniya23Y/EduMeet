@@ -1,17 +1,17 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const user = require("../models/User");
+const User = require("../models/User");
 
-// auth
+//auth
 exports.auth = async (req, res, next) => {
   try {
-    // extract token
+    //extract token
     const token =
-      req.body.token ||
       req.cookies.token ||
-      req.get("Authorization")?.replace("Bearer ", "");
+      req.body.token ||
+      req.header("Authorisation").replace("Bearer ", "");
 
-    // if token missing, then return response
+    //if token missing, then return response
     if (!token) {
       return res.status(401).json({
         success: false,
@@ -19,28 +19,28 @@ exports.auth = async (req, res, next) => {
       });
     }
 
-    // verify token
+    //verify the token
     try {
-      const payload = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = payload;
-    } catch (error) {
+      const decode = jwt.verify(token, process.env.JWT_SECRET);
+      console.log("decode= ", decode);
+      req.user = decode;
+    } catch (err) {
       //verification - issue
       return res.status(401).json({
         success: false,
-        message: "Invalid token.",
+        message: "token is invalid",
       });
     }
     next();
   } catch (error) {
-    console.log(error);
     return res.status(401).json({
       success: false,
-      message: "Error in validating token",
+      message: "Something went wrong while validating the token",
     });
   }
 };
 
-// student
+//isStudent
 exports.isStudent = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Student") {
@@ -58,7 +58,7 @@ exports.isStudent = async (req, res, next) => {
   }
 };
 
-// instructor
+//isInstructor
 exports.isInstructor = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Instructor") {
@@ -76,7 +76,7 @@ exports.isInstructor = async (req, res, next) => {
   }
 };
 
-// admin
+//isAdmin
 exports.isAdmin = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Admin") {

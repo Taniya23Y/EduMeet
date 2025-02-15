@@ -8,10 +8,10 @@ export const navItems = [
   },
   {
     label: "About us",
-    path: "/aboutus",
+    path: "/about",
   },
   {
     label: "Contact us",
-    path: "/contactus",
+    path: "/contact",
   },
 ];

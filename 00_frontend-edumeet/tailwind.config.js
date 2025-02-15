@@ -65,6 +65,18 @@ export default {
         256: "0 0 256px",
         100: "0 0 100%",
       },
+      keyframes: {
+        "border-shine": {
+          "0%": { borderColor: "yellow transparent transparent transparent" },
+          "25%": { borderColor: "transparent yellow transparent transparent" },
+          "50%": { borderColor: "transparent transparent yellow transparent" },
+          "75%": { borderColor: "transparent transparent transparent yellow" },
+          "100%": { borderColor: "yellow transparent transparent transparent" },
+        },
+      },
+      animation: {
+        "border-shine": "border-shine 2.5s linear infinite",
+      },
     },
   },
   plugins: [],

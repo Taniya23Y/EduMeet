@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import logo from "../../assets/edumeet-yellow-logo-removebg-preview.png";
-import { navItems } from "../../constants/navIndex";
+import logo from "../assets/edumeet-yellow-logo-removebg-preview.png";
+import { navItems } from "./navIndex";
 import { Menu, X } from "lucide-react";
-import ButtonOne from "../UI/ButtonOne";
-import ButtonTwo from "../UI/ButtonTwo";
+import ButtonOne from "../components/UI/ButtonOne";
+import ButtonTwo from "../components/UI/ButtonTwo";
 import clsx from "clsx";
 import { Link, matchPath } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
-import { apiConnector } from "../../services/apiConnector";
-import { categories } from "../../services/apis";
+import { apiConnector } from "../services/apiConnector";
+import { categories } from "../services/apis";
+import ProfileShow from "../components/Auth/ProfileShow";
 
 const NavBar = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -24,6 +25,7 @@ const NavBar = () => {
   const { totalItems } = useSelector((state) => state.cart);
 
   // Fetching categories
+  // eslint-disable-next-line no-unused-vars
   const [subLinks, setSubLinks] = useState([]);
 
   const fetchSublinks = async () => {
@@ -40,7 +42,6 @@ const NavBar = () => {
 
   useEffect(() => {
     fetchSublinks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleNavbar = () => {

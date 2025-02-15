@@ -1,7 +1,7 @@
-import { unlockBannerPart } from "../../data/unlockbanner-part";
-import HighlightText from "../UI/HightlightText";
+import { unlockBannerPart } from "../../../data/unlockbanner-part";
+import HighlightText from "../../UI/HightlightText";
 import { useState } from "react";
-import CourseCard from "../UI/CourseCard";
+import CourseCard from "../../UI/CourseCard";
 
 const tabsName = [
   "Free",

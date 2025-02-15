@@ -1,8 +1,8 @@
-import { FooterLink2 } from "../../data/footer-links";
+import { FooterLink2 } from "../data/footer-links";
 import { Link } from "react-router-dom";
 
 // Images
-import Logo from "../../assets/images/logo.png";
+// import Logo from "../../assets/images/logo.png";
 
 // Icons
 import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -29,7 +29,8 @@ const Footer = () => {
           {/* Section 1 */}
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
             <div className="w-[30%] flex flex-col gap-3 lg:w-[30%] mb-7 lg:pl-0">
-              <img src={Logo} alt="" className="object-contain" />
+              {/* <img src={Logo} alt="" className="object-contain" /> */}
+              <h1 className="text-yellow font-extrabold text-2xl">EduMeet</h1>
               <h1 className="text-yellow font-semibold text-[16px]">Company</h1>
               <div className="flex flex-col gap-2">
                 {["About", "Careers", "Affiliates"].map((ele, i) => {
@@ -147,7 +148,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container flex flex-row items-center justify-between w-11/12 max-w-maxContent text-gray-100 mx-auto  pb-14 text-sm">
+      <div className="container flex flex-row items-center justify-between w-11/12 max-w-maxContent text-gray-100 mx-auto pb-6 text-sm">
         {/* Section 1 */}
         <div className="flex justify-between lg:items-start items-center flex-col lg:flex-row gap-3 w-full">
           <div className="flex flex-row">
@@ -155,24 +156,35 @@ const Footer = () => {
               return (
                 <div
                   key={i}
-                  className={` ${
-                    BottomFooter.length - 1 === i
-                      ? ""
-                      : "border-r border-yellow cursor-pointer hover:text-yellow transition-all duration-200"
-                  } px-3 `}
+                  className={`cursor-pointer hover:text-yellow transition-all duration-200 px-3 ${
+                    BottomFooter.length - 1 !== i
+                      ? "border-r border-yellow"
+                      : ""
+                  }`}
                 >
-                  <Link to={ele.split(" ").join("-").toLocaleLowerCase()}>
-                    {ele}
-                  </Link>
+                  <Link to={ele.split(" ").join("-").toLowerCase()}>{ele}</Link>
                 </div>
               );
             })}
           </div>
 
           <div className="text-center">
-            Made By Taniya Yadav with ❤️ ©2024 EduMeet
+            Designed and Developed By{" "}
+            <a
+              href="https://www.linkedin.com/in/taniyay"
+              className="text-yellow"
+            >
+              Taniya Yadav
+            </a>{" "}
+            with ❤️
           </div>
         </div>
+      </div>
+
+      <div className="text-center py-2 pb-2 w-full text-[#ffffffe7] text-[14px]">
+        2024 - {new Date().getFullYear()} © Copyright
+        <span className="text-xl text-yellow font-bold"> EduMeet. </span>
+        <span>All Rights Reserved</span>
       </div>
     </div>
   );

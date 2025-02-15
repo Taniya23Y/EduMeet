@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import Hero from "../components/Layout/Hero";
-import SubHero from "../components/Layout/SubHero";
-import Video from "../components/UI/Video";
+import Hero from "../components/Layout/HomePages/Hero";
+import SubHero from "../components/Layout/HomePages/SubHero";
+import Video from "../components/Layout/HomePages//Video";
 import TestimonialReview from "../components/UI/testimonialReview";
 import { useRef } from "react";
-import CodeBox from "../components/Layout/CodeBox";
+import CodeBox from "../components/Layout/HomePages/CodeBox";
 import HighlightText from "../components/UI/HightlightText";
 import CTAButton from "../components/UI/Button";
 import "../index.css";
 import { FaArrowRight } from "react-icons/fa";
-import TimelineSection from "../components/Layout/TimelineSection";
-import LearningLanguageSection from "../Components/Layout/LearningLanguageSection";
+import ProblemSolution from "../components/Layout/HomePages/ProblemSolution";
+import LearningLanguageSection from "../components/Layout/HomePages/LearningLanguageSection";
 import Faq from "../components/Layout/FAQ";
-import UnlockBanner from "../components/Layout/UnlockBanner";
+import UnlockBanner from "../components/Layout/HomePages/UnlockBanner";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container w-screen min-h-screen relative mx-auto flex flex-col items-center justify-between">
+    <div className="container w-screen min-h-screen relative mx-auto flex flex-col items-center justify-between select-none">
       {/* hero | section - 1  */}
       <Link to={"/signup"} />
       <div>
@@ -135,7 +135,7 @@ const Home = () => {
         </div>
 
         {/* Section 2 header, timeline, learning */}
-        <div className="mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7">
+        <div className="container mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7">
           {/* Section 2 header */}
           <div className="flex flex-col lg:flex-row justify-between gap-5 mb-10 -mt-20 lg:mt-[95px]">
             <div className="text-4xl font-semibold lg:w-[45%]">
@@ -145,37 +145,41 @@ const Home = () => {
 
             <div className="flex flex-col gap-10 lg:w-[40%] items-start">
               <div className="text-[16px]">
-                The modern StudyNotion is the dictates its own terms. Today, to
-                be a competitive specialist requires more than professional
-                skills.
+                The modern Edumeet is the dictates its own terms. Today, to be a
+                competitive specialist requires more than professional skills.
               </div>
               <CTAButton active={true} linkto={"/signup"}>
                 <div>Learn more</div>
               </CTAButton>
             </div>
           </div>
-
-          {/* Timeline section */}
-          <TimelineSection />
-
-          <LearningLanguageSection />
         </div>
       </div>
 
-      {/* FQA - section - 10  */}
+      {/* Timeline | section - 10 */}
+      <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter">
+        <ProblemSolution />
+      </div>
+
+      {/* LearningLanguageSection | section - 11  */}
+      <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter">
+        <LearningLanguageSection />
+      </div>
+
+      {/* FQA | section - 12  */}
       <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white">
         <h2 className="text-center text-4xl font-semibold mt-0">
           <HighlightText text={"Discover More with Our FAQ Section"} />
         </h2>
       </div>
 
-      {/* FAQ | section - 11 */}
+      {/* FAQ | section - 13 */}
       <Faq />
 
-      {/* Review - section - 12  */}
+      {/* Review - section - 14  */}
       <div className="w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white">
         <h2 className="text-center text-4xl font-semibold mt-10 pt-9">
-          <HighlightText text={"Review Section"} />
+          <HighlightText text={"User Testimonials"} />
         </h2>
         {/* Review Slider here */}
         <TestimonialReview />

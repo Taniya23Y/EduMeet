@@ -24,21 +24,27 @@ const otpTemplate = (otp) => {
         width: 100%;
         background-color: #1d1d1d;
         padding: 30px;
-        border-radius: 10px;
+        border-radius: 40px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         text-align: center;
-        border: 2px solid #ffb400;
       }
 
-      .logo {
-        max-width: 180px;
-        margin-bottom: 20px;
+      .logoH {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .h1Logo {
+        padding-bottom: 16px;
+        color: #ffb400;
       }
 
       .message {
         font-size: 22px;
         font-weight: bold;
-        color: #ffb400;
+        color: #bfdc98;
         margin-bottom: 15px;
       }
 
@@ -55,7 +61,7 @@ const otpTemplate = (otp) => {
       .highlight {
         font-size: 24px;
         font-weight: bold;
-        color: #ffb400;
+        color: #e84854;
       }
 
       .support {
@@ -92,12 +98,28 @@ const otpTemplate = (otp) => {
 
   <body>
     <div class="container">
-      <a href="https://edummet-edtech-project.vercel.app">
-        <img class="logo" src="logo.png" alt="Edumeet - Learning Hub Logo" />
-      </a>
+      <div class="logoH">
+        <a href="https://edumeet-project.vercel.app">
+          <img
+            class="logo"
+            src="../edumeet-exact.png"
+            alt="Edumeet - Learning Hub Logo"
+            height="50px"
+            width="52px"
+          />
+        </a>
+        <h1 class="h1Logo">EduMeet</h1>
+      </div>
+
+      <img
+        src="./EmailVerification.png"
+        alt="courseEnrollment"
+        height="110px"
+        width="170px"
+      />
       <div class="message">OTP Verification Email</div>
       <div class="body">
-        <p>Dear User,</p>
+        <p>Dear User, 👋</p>
         <p>
           Thank you for registering with Edumeet. To complete your registration,
           please use the following OTP (One-Time Password) to verify your
@@ -107,14 +129,14 @@ const otpTemplate = (otp) => {
         <p>
           This OTP is valid for 5 minutes. If you did not request this
           verification, please disregard this email. Once your account is
-          verified, you will have access to our platform and its features.
+          verified, you will have access to our platform and its features. ✨
         </p>
       </div>
       <div class="support">
         If you have any questions or need assistance, please feel free to reach
         out to us at
         <a href="mailto:info@edumeet.com">info@edumeet.com</a>. We are here to
-        help!
+        help! 😊
       </div>
     </div>
   </body>

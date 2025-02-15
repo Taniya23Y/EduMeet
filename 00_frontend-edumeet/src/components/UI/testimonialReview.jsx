@@ -74,6 +74,7 @@ const secondColumn = testimonial.slice(3, 6);
 const thirdColumn = testimonial.slice(6, 9);
 
 // Updated NewTestimonialColumn component with default param
+// eslint-disable-next-line react-refresh/only-export-components
 const NewTestimonialColumn = ({ testimonial, className = "" }) => (
   <div className={`mx-auto ${className}`}>
     <motion.div
@@ -90,7 +91,7 @@ const NewTestimonialColumn = ({ testimonial, className = "" }) => (
         <React.Fragment key={index}>
           {testimonial.map(({ text, imageSrc, name, username }, index) => (
             <div
-              className="card bg-white bg-opacity-70 backdrop-blur-lg p-4 rounded-lg shadow-lg"
+              className="card bg-white bg-opacity-70 p-4 rounded-lg"
               key={index}
             >
               <div className="text-black text-[0.99rem]">{text}</div>
@@ -140,8 +141,9 @@ const testimonialReview = () => {
             What our users say
           </h2>
           <p className="font-medium text-center text-purple-300 pb-9">
-            From intuitive design to powerful features, our app has become an
-            essential tool for users around the world.
+            Explore inspiration and valuable insights from our students&apos;
+            latest reviews. Their success stories showcase the transformative
+            impact of learning and growing with EduMeet.
           </p>
         </div>
         <div

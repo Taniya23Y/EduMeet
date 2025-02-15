@@ -32,7 +32,7 @@ exports.updateCourseProgress = async (req, res) => {
       }
 
       courseProgress.completedVideos.push(subSectionId);
-      console.log("Copurse Progress Push Done");
+      console.log("Course Progress Push Done");
     }
     await courseProgress.save();
     console.log("Course Progress Save call Done");

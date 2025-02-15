@@ -5,6 +5,7 @@ const mailSender = async (email, title, body) => {
   try {
     let transporter = nodemailer.createTransport({
       host: process.env.MAIL_HOST,
+      port: 587,
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,
@@ -12,15 +13,16 @@ const mailSender = async (email, title, body) => {
     });
 
     let info = await transporter.sendMail({
-      from: "Taniya Yadav - Edumeet", // sender address
+      from: `"EduMeet " <${process.env.MAIL_USER}>`,
       to: `${email}`,
       subject: `${title}`,
-      html: `${body}`, // plain text body
+      html: `${body}`,
     });
     console.log(info);
     return info;
   } catch (error) {
-    console.log("Error in mailSender", error.message);
+    console.log(error.message);
+    return error;
   }
 };
 
